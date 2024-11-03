@@ -1,0 +1,229 @@
+/* ---- IMPORTED FONTS ---- */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+
+/*---- CSS RESET ---- */
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ---- ROOT VARIABLES ---- */
+:root {
+    --green: #06A816;
+    --orange: #E75D02;
+    --black: #000000;
+    --white: #ffffff;
+    --font-heading: 'Irish Grover', cursive;
+    --font-body: 'Habibi', serif;
+}
+
+/* ---- GLOBAL STYLES (mobile first/small) ----*/
+body {
+    font-family: var(--font-body);
+    color: var(--black);
+    background-color: var(--white);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: var(--green);
+    color: var(--white);
+}
+
+header h1 {
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+}
+
+header p {
+    text-align: left;
+    font-size: 1.25em;
+}
+
+nav {
+    text-align: right;
+}
+
+nav button {
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    margin: 0.5em;
+}
+
+section {
+    padding: 1em;
+    text-align: left;
+}
+
+section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75em;
+    color: var(--black);
+    margin-bottom: 0.5em;
+}
+
+section h3 {
+    font-size: 1.25em;
+    margin: 1em 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+.product {
+    position: relative;
+    border: 2px solid var(--green);
+    padding: 1em;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    padding: 0.5em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
+
+footer {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1em 0;
+}
+
+footer h2 {
+    font-size: 1.5em;
+    font-family: var(--font-heading);
+    color: var(--white);
+    margin: 0.5em 0;
+    text-align: left;
+}
+
+footer p {
+    font-size: 1em;
+    text-align: left;
+}
+
+#contact, #hours {
+    flex: 1;
+    padding: 0 1em;
+}
+
+footer section p {
+    margin: 0.25em 0;
+}
+
+.footer-copyright {
+    background-color: var(--white);
+    color: var(--green);
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+#top-btn {
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1em;
+    padding: 0.5em;
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/*---- MEDIA QUERY (medium) ----*/
+@media (min-width: 834px) {
+    .product-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/*---- MEDIA QUERY (large) ----*/
+@media (min-width: 1280px) {
+    .product-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/*---- MEDIA QUERY (xl) ----*/
+@media (min-width: 1440px) {
+    header h1 {
+        font-size: 3em;
+    }
+    
+    section h2 {
+        font-size: 2em;
+    }
+}
